@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Room</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h2>Select Your Room</h2>
+    <form id="roomForm" action="payment.html">
+        <label for="checkin">Check-in Date:</label>
+        <input type="date" id="checkin" required>
+
+        <label for="checkout">Check-out Date:</label>
+        <input type="date" id="checkout" required>
+
+        <div class="room-container">
+            <div class="room">
+                <img src="deluxe.jpg" alt="Deluxe Room">
+                <h3>Deluxe Room</h3>
+                <p>₹5000/night</p>
+                <button type="button" onclick="selectRoom('Deluxe Room', 5000)">Select Deluxe</button>
+            </div>
+            <div class="room">
+                <img src="suite.jpg" alt="Suite Room">
+                <h3>Suite Room</h3>
+                <p>₹8000/night</p>
+                <button type="button" onclick="selectRoom('Suite Room', 8000)">Select Suite</button>
+            </div>
+            <div class="room">
+                <img src="executive.jpg" alt="Executive Room">
+                <h3>Executive Room</h3>
+                <p>₹10000/night</p>
+                <button type="button" onclick="selectRoom('Executive Room', 10000)">Select Executive</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

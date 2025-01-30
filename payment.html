@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h2>Payment Information</h2>
+        <p>Room Type: <span id="roomType"></span></p>
+        <p>Stay Duration: <span id="days"></span> nights</p>
+        <p>Total Amount: ₹<span id="totalAmount"></span></p>
+        <form onsubmit="return validatePayment()" action="receipt.html">
+            <label for="card-number">Card Number (16 digits):</label>
+            <input type="text" id="card-number" maxlength="16" required>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="text" id="expiry-date" placeholder="MM/YY" required>
+
+            <label for="cvv">CVV (3 digits):</label>
+            <input type="text" id="cvv" maxlength="3" required>
+
+            <label for="otp">OTP (4 digits):</label>
+            <input type="text" id="otp" maxlength="4" required>
+
+            <button type="button" onclick="generateOTP()">Generate OTP</button>
+            <button type="submit" class="btn">Pay Now</button>
+        </form>
+    </div>
+    <script>
+        // Populate payment page with booking details
+        document.getElementById("roomType").textContent = sessionStorage.getItem("roomType");
+        document.getElementById("days").textContent = sessionStorage.getItem("days");
+        document.getElementById("totalAmount").textContent = sessionStorage.getItem("totalAmount");
+    </script>
+</body>
+</html>

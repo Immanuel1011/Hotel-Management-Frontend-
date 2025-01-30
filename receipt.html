@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Receipt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Booking Receipt</h2>
+        <p>Thank you for booking with us! Here are your details:</p>
+        <ul>
+            <li>Room Type: <span id="roomType"></span></li>
+            <li>Check-in Date: <span id="checkinDate"></span></li>
+            <li>Check-out Date: <span id="checkoutDate"></span></li>
+            <li>Stay Duration: <span id="days"></span> nights</li>
+            <li>Total Amount Paid: ₹<span id="totalAmount"></span></li>
+        </ul>
+        <a href="index.html" class="btn">Return to Home</a>
+    </div>
+    <script>
+        // Populate receipt with booking details
+        document.getElementById("roomType").textContent = sessionStorage.getItem("roomType");
+        document.getElementById("checkinDate").textContent = sessionStorage.getItem("checkinDate");
+        document.getElementById("checkoutDate").textContent = sessionStorage.getItem("checkoutDate");
+        document.getElementById("days").textContent = sessionStorage.getItem("days");
+        document.getElementById("totalAmount").textContent = sessionStorage.getItem("totalAmount");
+    </script>
+</body>
+</html>
